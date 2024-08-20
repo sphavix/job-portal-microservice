@@ -12,8 +12,8 @@ using Portal.Infrastructure.Persistance;
 namespace Portal.Infrastructure.Migrations
 {
     [DbContext(typeof(PortalDbContext))]
-    [Migration("20240820133412_InitalCreate")]
-    partial class InitalCreate
+    [Migration("20240820153814_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
