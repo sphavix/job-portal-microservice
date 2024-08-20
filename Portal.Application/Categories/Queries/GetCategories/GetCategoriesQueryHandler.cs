@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using Portal.Application.Dtos;
+using Portal.Application.Categories.Dtos;
 using Portal.Domain.Repositories;
 
 namespace Portal.Application.Categories.Queries.GetCategories

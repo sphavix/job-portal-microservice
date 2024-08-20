@@ -1,8 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Portal.Application.Categories.Commands.CreateCategory;
+using Portal.Application.Categories.Commands.DeleteCategory;
+using Portal.Application.Categories.Dtos;
 using Portal.Application.Categories.Queries.GetCategories;
-using Portal.Application.Dtos;
+using Portal.Application.Categories.Queries.GetCategory;
 
 namespace Portal.Api.Controllers
 {
@@ -23,5 +26,27 @@ namespace Portal.Api.Controllers
             var results = await mediator.Send(categories);
             return Ok(results);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CategoryDto>> GetCategory(Guid id)
+        {
+            var category = new GetCategoryQuery(id);
+            var result = await mediator.Send(category);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CategoryDto>> CreateCategory([FromBody] CreateCategoryCommand command)
+        {
+            return Ok(await mediator.Send(command));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(Guid id)
+        {
+            var result = new DeleteCategoryCommand { Id = id };
+            return Ok(await mediator.Send(result));
+        }
+    
     }
 }

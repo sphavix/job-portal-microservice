@@ -1,6 +1,6 @@
 ﻿
 using MediatR;
-using Portal.Application.Dtos;
+using Portal.Application.Categories.Dtos;
 
 namespace Portal.Application.Categories.Queries.GetCategories
 {

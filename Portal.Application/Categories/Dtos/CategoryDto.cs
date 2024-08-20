@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portal.Application.Dtos
+namespace Portal.Application.Categories.Dtos
 {
     public class CategoryDto
     {
